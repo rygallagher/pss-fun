@@ -1,3 +1,3 @@
 # PssolutionsFun
 
-Uh oh, [stinky](https://pss.fun).
+Uh oh, [stinky](https://pssolutions.fun).

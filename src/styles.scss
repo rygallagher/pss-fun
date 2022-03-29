@@ -1,1 +1,64 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@import './app/styles/red.palette.scss';
+@import './app/styles/green.palette.scss';
+@import './app/styles/blue.palette.scss';
+@import './app/styles/onyx.palette.scss';
+@import './app/styles/latte.palette.scss';
+
+@include mat.core();
+
+$onyx-palette: mat.define-palette($onyx, 300);
+$latte-palette: mat.define-palette($latte, 300);
+$green-palette: mat.define-palette($green, 300);
+$blue-palette: mat.define-palette($blue, 300);
+$red-palette: mat.define-palette($red, 300);
+
+$theme: mat.define-dark-theme((
+    color: (
+        primary: $green-palette,
+        accent: $latte-palette,
+        warn: $red-palette,
+    )
+));
+
+@include mat.all-component-themes($theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.red-text {
+    color: mat.get-color-from-palette($red-palette, 500);
+}
+
+.green-text {
+    color: mat.get-color-from-palette($green-palette, 500);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

@@ -1,0 +1,13 @@
+<table id="links">
+    <tr>
+        <th>Links</th>
+        <th>Description</th>
+        <th>Date Added</th>
+    </tr>
+
+    <tr *ngFor="let row of rows">
+        <td><a [routerLink]="row.link.route">{{row.link.name}}</a></td>
+        <td>{{row.description}}</td>
+        <td>{{row.date | date:'longDate'}}</td>
+    </tr>
+</table>

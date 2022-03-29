@@ -12,7 +12,7 @@ interface Row {
 })
 export class DaysSinceLastSeenComponent  {
 	rows: Row[] = [
-		{name: 'Adam', days: '--'},
+		{name: 'Adam', days: '64'},
 		{name: 'Allen', days: '0'},
 		{name: 'Brandon', days: '0'},
 		{name: 'Chris', days: '0'},
@@ -27,10 +27,10 @@ export class DaysSinceLastSeenComponent  {
 		{name: 'Matthew', days: '0'},
 		{name: 'Mike', days: '--'},
 		{name: 'Nick', days: '0'},
-		{name: 'Paul', days: '--'},
+		{name: 'Paul', days: '11'},
 		{name: 'Ry', days: '0'},
 		{name: 'Timmy', days: '0'},
-		{name: 'Tyler', days: '--'},
-		{name: 'Wayne', days: '--'},
+		{name: 'Tyler', days: '6'},
+		{name: 'Wayne', days: '15'},
 	]
 }

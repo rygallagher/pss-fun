@@ -1,29 +1,37 @@
-<button *ngIf="!drawerOpen" 
-        mat-icon-button 
-        class="overlay-container"
-        matTooltip="See Screens"
-        color="primary" 
-        type="button"
-        (click)="drawerOpen = !drawerOpen">
-    <mat-icon>keyboard_double_arrow_right</mat-icon>
-</button>
+<div class="overlay-container">
+    <button *ngIf="!drawerOpen" 
+            mat-icon-button 
+            matTooltip="See Screens"
+            color="primary" 
+            type="button"
+            (click)="drawerOpen = !drawerOpen">
+        <mat-icon>keyboard_double_arrow_right</mat-icon>
+    </button>
 
-<button *ngIf="drawerOpen"
-        mat-icon-button 
-        class="overlay-container"
-        matTooltip="Close Screens"
-        color="primary" 
-        type="button"
-        (click)="drawerOpen = !drawerOpen">
-    <mat-icon>keyboard_double_arrow_left</mat-icon>
-</button>
+    <button *ngIf="drawerOpen"
+            mat-icon-button 
+            matTooltip="Close Screens"
+            color="primary" 
+            type="button"
+            (click)="drawerOpen = !drawerOpen">
+        <mat-icon>keyboard_double_arrow_left</mat-icon>
+    </button>
+</div>
 
-<mat-drawer-container class="height-100 width-100">
-    <mat-drawer #drawer mode="side" [opened]="drawerOpen">
+<mat-drawer-container class="height-100vh width-100vw">
+    <mat-drawer #drawer mode="side" [opened]="drawerOpen" class="grid">
         <mat-nav-list  class="margin-top-40px">
             <a mat-list-item routerLink="dylan-vs-jon" routerLinkActive="active-link">Dylan VS Jon</a>
             <a mat-list-item routerLink="days-since-last-seen" routerLinkActive="active-link">Days Since Last Seen</a>
         </mat-nav-list>
+
+        <div class="bottom-sidenav width-100">
+            <mat-divider></mat-divider>
+            <button mat-flat-button class="width-inherit" (click)="goHome()">
+                <mat-icon class="margin-right-10">home</mat-icon>
+                Home
+            </button>
+        </div>
     </mat-drawer>
 
     <router-outlet></router-outlet>
